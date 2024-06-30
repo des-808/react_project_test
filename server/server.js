@@ -73,7 +73,7 @@ app.post("/login", (req, res) => {
         "select * from users where username=?",
         [username],
         async (err, user) => {
-            console.log(user);
+            //console.log(user);
             if (err || !user) {
                 return res.status(400).json({ message: "Неверное имя пользователя" });
             }
@@ -103,7 +103,7 @@ const authenticateToken = (req, res, next) => {
     }
     jwt.verify(token, "superpupersecretkey", (err, user) => {
         if(err) {
-            console.log(token);
+            //console.log(token);
             return res.status(403).json({message: "Невалидный токен"});
         }
         //записываем информацию о пользователе
@@ -119,8 +119,8 @@ app.get("/protected", authenticateToken, (req, res) => {
             console.log(err);
             return res.status(404).json({message: "Пользователь не найден"});            
         }
-        console.log(user);
-        console.log("--------------K------------")
+        //console.log(user);
+        //console.log("--------------K------------")
         res.json({user});
     })
 })
