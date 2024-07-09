@@ -69,6 +69,13 @@ const Menu = ({ isAuthenticated, username, handleLogout }) => {
                                     </NavLink>
                                 </li>
                                 <li>
+                                    <NavLink className="nav-link text-light dropdown-item"
+                                    aria-current = "page"
+                                    to="/game" >
+
+                                    </NavLink>
+                                </li>
+                                <li>
                                     <button
                                         className="dropdown-item"
                                         onClick={handleLogoutClick}
